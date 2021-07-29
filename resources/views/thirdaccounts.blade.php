@@ -36,7 +36,7 @@
                         @if($errors->any())
                             <div class="alert alert-danger"> {{ $errors->first() }}</div>
                         @endif
-                        <form class="w-100 bg-light p-3" action="{{ route('send_transfer_another_account') }}" method="post">
+                        <form id="formTransfer" class="w-100 bg-light p-3" action="{{ route('send_transfer_another_account') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="origin_account">Cuenta origen</label>
@@ -97,6 +97,7 @@
             })
         })
     </script>
+    <script src="{{ asset('js/custom/transfers.js') }}"></script>
     @isset($successfulMessage)
         <script>
             const contentMsg = "{!! $successfulMessage['content'] !!}"
