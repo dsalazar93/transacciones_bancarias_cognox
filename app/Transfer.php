@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\DB;
 
 class Transfer extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'source_account', 'target_account', 'amount', 'user_id',
+    ];
+
     static public function getDataTransfers($user_id){
         $transfers = DB::select("SELECT 
             id AS codigo,

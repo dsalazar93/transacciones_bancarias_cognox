@@ -10,7 +10,8 @@
         <div class="row justify-content-center">
             <div class="col-10">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
+                        <h2 class="text-center">Transacciones realizadas</h2>
                         <table id="tableTransfers">
                             <thead>
                                 <tr>
@@ -34,6 +35,18 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="col-12 mb-3">
+                        <h2 class="text-center">Realizar transacciones</h2>
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <a href="{{ route('individual_accounts') }}" class="btn mx-2 btn-primary">Cuentas propias</a>
+                        <a href="{{ route('third_accounts') }}" class="btn mx-2 btn-primary">Cuentas de terceros</a>
+                    </div>
+                    @if($errors->any())
+                    <div class="col-12 mt-3">
+                        <div class="alert alert-danger"> {{ $errors->first() }}</div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
