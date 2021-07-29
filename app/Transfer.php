@@ -16,6 +16,10 @@ class Transfer extends Model
         'source_account', 'target_account', 'amount', 'user_id',
     ];
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
     static public function getDataTransfers($user_id){
         $transfers = DB::select("SELECT 
             id AS codigo,

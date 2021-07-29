@@ -24,4 +24,5 @@ Route::get('transactions', 'TransferController@index')->name('transactions');
 Route::get('individual_accounts', 'TransferController@individual_accounts')->name('individual_accounts');
 Route::get('third_accounts', 'TransferController@third_accounts')->name('third_accounts');
 Route::post('send_transfer_myaccount', 'TransferController@send_transfer_myaccount')->name('send_transfer_myaccount');
+Route::post('send_transfer_another_account', 'TransferController@sendTransferAnotherAccount')->name('send_transfer_another_account');
 
