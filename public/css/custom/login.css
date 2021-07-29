@@ -1,0 +1,14 @@
+#app{
+  height: 100vh;
+}
+
+#app main{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app main .card{
+  padding-bottom:55px;
+}

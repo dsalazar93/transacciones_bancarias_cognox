@@ -1,0 +1,12 @@
+#homePage .card{
+  height: 240px;
+}
+
+#homePage a{
+  text-decoration: none;
+}
+
+#homePage .card-body{
+  padding-left: 0;
+  padding-right: 0;
+}
