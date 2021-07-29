@@ -11,6 +11,8 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12">
+                        <h2 class="text-center">Tablero de control</h2>
+                        <p>A continuación señor usuario dispone de varias opciones para hacer transferencias y otros servicios con sus cuentas bancarias.</p>
                         <div class="row">
                             <div class="col-4">
                                 <a href="{{ route('transactions') }}">
@@ -43,8 +45,7 @@
                             </div>
 
                             <div class="col-4">
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
+                                <a href="{{ route('logout') }}" onclick="logout(event)">
                                     <div class="card d-flex align-items-center justify-content-center flex-column">
                                         <div class="row">
                                             <div class="col-12 d-flex align-items-center justify-content-center flex-column">
