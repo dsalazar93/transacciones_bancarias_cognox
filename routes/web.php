@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/transactions', 'TransferController@index')->name('transactions');
+Route::get('transactions', 'TransferController@index')->name('transactions');
+// Route::get('getTransfers', 'TransferController@getTransfers')->name('getTransfers');

@@ -22,7 +22,7 @@
                                                 <img src="{{ asset('img/transaccion.png') }}" class="w-50 mt-4" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title text-center">Transacciones bancarias</h5>
-                                                    <p class="card-text text-center">Realiza trasacciones y visualizalas</p>
+                                                    <p class="card-text text-center">Realiza transacciones y visualizalas</p>
                                                 </div>
                                             </div>
                                         </div>
