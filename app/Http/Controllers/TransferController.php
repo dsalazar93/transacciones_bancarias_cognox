@@ -68,8 +68,10 @@ class TransferController extends Controller
         $myActiveAccounts = $this->getMyActiveAccounts();
         if($myActiveAccounts->count() > 1){
             return view('accounts', compact('myActiveAccounts'));
-        } else {
+        } else if ($myActiveAccounts->count() == 1) {
             return back()->withErrors(['No posees mas de una cuenta para poder hacer transferencias entre productos']);
+        } else {
+            return back()->withErrors(['No posees ninguna para poder hacer transferencias entre productos']);
         }
     }
 
