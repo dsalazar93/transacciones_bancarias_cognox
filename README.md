@@ -1,61 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Transacciones bancarias
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Aplicativo web desarrollado con el framework Laravel de PHP para realizar transacciones bancarias.
 
-## About Laravel
+La aplicación fue desarrollada para cubrir los 5 casos de uso de la prueba técnica de Cognox.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requerimientos del ambiente
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Para poder instalar y ejecutar este proyecto, el ambiente donde se ponga debe cumpliar las siguientes condiciones:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 7.2.5
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- MySQL Server 5.7
+- Git
+- Composer
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Se debe seguir la siguiente secuencia de comandos y acciones (Terminal de comandos Linux, Unix o CMD) para tener una correcta ejecución del proyecto.
 
-## Laravel Sponsors
+```bash
+git clone https://github.com/dsalazar93/transacciones_bancarias_cognox.git
+cd transacciones_bancarias_cognox
+composer install
+```
+- Crear en MySQL Server la base de datos llamada: **banco_cognox**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Realizar una copia del archivo **.env.example** (Que está dentro del proyecto) y renombrar esta copia como **.env** ya que será el archivo de configuración del ambiente.
 
-### Premium Partners
+- Luego se deben cambiar los siguientes valores dentro del archivo **.env**:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```env
+APP_NAME=Banco
+DB_DATABASE=banco_cognox
+DB_USERNAME=
+DB_PASSWORD=
+```
+Los valores **DB_USERNAME** y **DB_PASSWORD** deben ser definido de acuerdo a sus acceso de MySQL Server.
 
-## Contributing
+- Luego continuar con los siguientes comandos:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan serve
+```
+Con estos pasos realizados ya se pueden hacer las pruebas desde navegador en **http://localhost:8000**
 
-## Code of Conduct
+## Observaciones sobre la construcción del proyecto
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- El diseño frontend de la aplicación esta muy vinculado al uso de clases de la libreria Bootstrap y unos pocos archivos CSS.
+- Las validaciones sobre la inserción de datos se pueden encontrar tanto en el backend como en el frontend.
+- Este proyecto al usar Laravel hace uso del patrón MVC para su contrucción y también aprovecha utilidades del ORM Eloquent y consultas a la base de datos por medio de los modelos.
+- En el proyecto se cuenta con el archivo **ModeloER.mwb** que se puede ejecutar con MySQL Workbench y encontrar el módelo relacional de la base de datos.
+- Proyecto realizado por [dsalazar93](https://github.com/dsalazar93)
