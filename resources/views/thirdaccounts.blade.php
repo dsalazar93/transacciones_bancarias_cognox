@@ -22,7 +22,7 @@
                             <tbody>
                                 @foreach ($thirdPartyAccounts as $account)
                                 <tr>
-                                    <td>{{ $account->firstname . $account->lastname }}</td>
+                                    <td>{{ $account->firstname . ' ' . $account->lastname }}</td>
                                     <td>{{ $account->number }}</td>
                                 </tr>
                                 @endforeach
